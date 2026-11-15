@@ -17,7 +17,3 @@
 ## Decisions and trade-offs
 
 <!-- Thresholds chosen, alternatives considered, what you would revisit with more time. -->
-
-## AI usage
-
-<!-- What was delegated to the assistant (setup, parsing, plots, app), and which blocks are marked `# AI`. -->
