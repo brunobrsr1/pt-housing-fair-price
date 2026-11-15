@@ -1,0 +1,33 @@
+# --- Project data and private notes (never commit) ---
+data/
+notes/
+models/
+*.joblib
+*.pkl
+
+# Project brief stays local (not for the public repo)
+fair-price-project-brief.pdf
+
+# --- Secrets ---
+.env
+.env.*
+kaggle.json
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+
+# --- Tooling caches ---
+.ruff_cache/
+.pytest_cache/
+.ipynb_checkpoints/
+.gradio/
+
+# --- Editors / OS ---
+.vscode/
+.idea/
+.DS_Store
