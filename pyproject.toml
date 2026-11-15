@@ -1,0 +1,46 @@
+[project]
+name = "fairprice"
+version = "0.1.0"
+description = "Asking-price model for Portuguese homes with calibrated intervals, compared against INE deed prices."
+readme = "README.md"
+authors = [{ name = "Bruno Silva" }]
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "gradio>=6.32.0",
+    "lightgbm>=4.7.0",
+    "matplotlib>=3.11.2",
+    "numpy>=2.5.4",
+    "pandas>=3.1.1",
+    "scikit-learn>=1.9.1",
+    "shap>=0.54.1",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.4.0",
+    "pytest>=9.2.0",
+    "ruff>=0.17.5",
+]
+
+[build-system]
+requires = ["uv_build>=0.13.8,<0.14.0"]
+build-backend = "uv_build"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+extend-include = ["*.ipynb"]
+
+[tool.ruff.lint]
+# E/W/F: pycodestyle + pyflakes basics. I: import order. UP: modern syntax.
+# B: likely bugs (mutable defaults, etc.). SIM: simplifications. NPY: numpy pitfalls
+# (e.g. legacy np.random calls that bypass a seeded Generator). RUF: ruff-specific checks.
+select = ["E", "W", "F", "I", "UP", "B", "SIM", "NPY", "RUF"]
+
+[tool.ruff.lint.per-file-ignores]
+# Notebooks are exploratory: allow imports mid-file and unused expressions for display.
+"*.ipynb" = ["E402", "B018"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
